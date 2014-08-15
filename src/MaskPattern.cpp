@@ -9,12 +9,7 @@
 #include "MaskPattern.h"
 
 
-void MaskPattern::setup(int num, int _angle, int _speed, int _offset, int _density, int _numOfShapes) {
-    
-    offset = _offset;
-    density = _density;
-    numOfShapes = _numOfShapes;
-    
+void MaskPattern::setup(int num) {
     switch(num) {
             case 0:
 
@@ -22,57 +17,50 @@ void MaskPattern::setup(int num, int _angle, int _speed, int _offset, int _densi
             
             case 1:
                 ofNoFill();
-                ofSetColor(255);
                 ofSetCircleResolution(48);
 
             break;
             
             case 2:
                 ofNoFill();
-                ofSetColor(255);
-                ofSetLineWidth(25);
 
             break;
             
         case 3:
             ofNoFill();
-            ofSetColor(255);
-            ofSetLineWidth(10);
 
         break;
 
         case 4:
             ofFill();
-            ofSetColor(255);
-            ofSetLineWidth(10);
 
         break;
             
         case 5:
             ofFill();
-            ofSetColor(255);
-            ofSetLineWidth(10);
 
         break;
             
         case 6:
             ofNoFill();
-            ofSetColor(255);
-            ofSetLineWidth(5);
 
         break;
 
         case 7:
             ofNoFill();
-            ofSetColor(255);
-            ofSetLineWidth(5);
-            
+            radius = 0.0;
+
         break;
     }
-    
 }
 
 void MaskPattern::update(int num) {
+    // Global Settings
+    ofSetLineWidth(lineWidth);
+    
+    
+    
+    // Draw Modes
     switch(num) {
         // DEFAULT
         case 0:
@@ -85,10 +73,9 @@ void MaskPattern::update(int num) {
         {
             if (offset % 100 == 0) {
                 offset = 0;
-                //density--;
             }
             offset += 2;
-            ofBackground(0,0,0);
+            
             for (int i = 0; i < numOfShapes; i++) {
                 ofFill();
                 //ofCircle(w/2, h/2, i * density + offset);
@@ -105,7 +92,7 @@ void MaskPattern::update(int num) {
                 //density--;
             }
             offset += 2;
-       
+
             for (int i = 0; i < numOfShapes; i++) {
                 ofSetRectMode(OF_RECTMODE_CORNER);
                 ofRect(w/2, 0-20, i * density + offset, i * density + offset);
@@ -153,14 +140,11 @@ void MaskPattern::update(int num) {
                 //density--;
             }
             offset += 2;
-            
+
             for (int i = 0; i < numOfShapes; i++) {
                 float flow = ofMap(sin(ofGetElapsedTimef()), -0.1 * numOfShapes, 0.1 * numOfShapes, 0, w);
                 ofLine(flow * i, h/2, flow * i, flow);
                 ofLine(w-flow * i, h/2, w-flow * i, flow);
-                //float flow2 = ofMap(sin(ofGetElapsedTimef()/2), -0.5, 0.5, w/4, 3*(w/4));
-                //ofLine(flow2, h/2, flow2, flow2);
-                //ofLine(w-flow2, h/2, w-flow2, flow2);
             }
             break;
         }
@@ -168,12 +152,12 @@ void MaskPattern::update(int num) {
         // RECTANGLES
         case 6:
         {
-            if (offset % 200 == 0) {
+            if (offset % 150 == 0) {
                 offset = 0;
                 //density--;
             }
             offset += 2;
-            
+
             for (int i = 0; i < numOfShapes; i++) {
                     ofSetRectMode(OF_RECTMODE_CENTER);
                     ofRect(w/2, h/2, i * offset, i * (offset/4));
@@ -184,22 +168,50 @@ void MaskPattern::update(int num) {
         // RECTANGLES
         case 7:
         {
-            if (offset % 200 == 0) {
-                offset = 0;
-                //density--;
-            }
-            offset += 2;
             
             for (int i = 0; i < numOfShapes; i++) {
-                ofSetRectMode(OF_RECTMODE_CENTER);
-                ofRect(w/2, h/2, i * offset, i * (offset/4));
+                float angle7 = ofGetElapsedTimef() * 3.6;
+                float x7 = w/2 + radius * cos(angle7) * i;
+                float y7 = h/2 + radius * sin(angle7) * i;
+                ofCircle(x7, y7, radius * i);
             }
+            
+            radius = radius + 0.1;
+            if(radius > 75.0) radius = 0.0;
+            
             break;
         }
             
     }
 }
 
+/*
+ 
+ UPDATERS
+ 
+ */
+
+void MaskPattern::updateWidth(int _lineWidth) {
+    lineWidth = _lineWidth;
+}
+
+void MaskPattern::updateNumber(int _numShapes) {
+    numOfShapes = _numShapes;
+}
+
+void MaskPattern::updateAngle(int _angle) {
+    angle = _angle;
+}
+void MaskPattern::updateSpeed(int _speed) {
+    speed = _speed;
+}
+
+
+/*
+ 
+ Overridden Circle Method
+ 
+ */
 
 void MaskPattern::circleStroke(int x, int y, int rad, int stroke) {
     ofBeginShape();

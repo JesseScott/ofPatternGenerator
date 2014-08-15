@@ -25,16 +25,25 @@ class MaskPattern {
             
         }
         
-        void setup(int _num, int _angle, int _speed, int _offset, int _density, int _numOfShapes);
+        void setup(int num);
         void update(int num);
+    
+        void updateWidth(int _lineWidth);
+        void updateNumber(int _numShapes);
+        void updateAngle(int _angle);
+        void updateSpeed(int _speed);
     
         void circleStroke(int x, int y, int rad, int stroke);
         
         int x, y, w, h;
+    
+        float radius;
+    
         int angle;
         int speed;
         int offset;
         int density;
+        int lineWidth;
         int numOfShapes;
     
 };

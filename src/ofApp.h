@@ -10,6 +10,8 @@ class ofApp : public ofBaseApp{
 		void update();
 		void draw();
 		void keyPressed(int key);
+        void mousePressed(int x, int y, int button);
+
         void setSettings(int num);
     
         int currentPattern;
@@ -21,5 +23,6 @@ class ofApp : public ofBaseApp{
         int offset;
         int density;
         int numOfShapes;
+        int lineWidth;
 		
 };

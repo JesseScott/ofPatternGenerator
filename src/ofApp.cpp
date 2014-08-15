@@ -5,6 +5,7 @@ void ofApp::setup(){
     
     ofEnableSmoothing();
     ofSetFrameRate(30);
+    ofSetVerticalSync(true);
     
     drawingFbo.allocate(704, 704, GL_RGBA);
     drawingFbo.begin();
@@ -18,8 +19,10 @@ void ofApp::setup(){
     offset = 0;
     density = 100;
     numOfShapes = 7;
-    pattern.setup(currentPattern, angle, speed, offset, density, numOfShapes);
-
+    lineWidth = 5;
+    
+    pattern.setup(currentPattern);
+    pattern.updateWidth(lineWidth);
 }
 
 //--------------------------------------------------------------
@@ -27,6 +30,7 @@ void ofApp::update(){
     drawingFbo.begin();
         ofClear(255,255,255, 0);
         ofBackground(0,0,0);
+        ofSetColor(255);
         ofPushMatrix(); ofPushStyle();
             pattern.update(currentPattern);
         ofPopMatrix(); ofPopStyle();
@@ -44,6 +48,17 @@ void ofApp::keyPressed(int key){
         currentPattern = key - 48;
         setSettings(currentPattern);
     }
+    lineWidth = ofClamp(lineWidth, 5, 45);
+    if(key == 357) { // UP
+        pattern.updateWidth(lineWidth += 5);
+    }
+    if(key == 359) { // DOWN
+        pattern.updateWidth(lineWidth -= 5);
+    }
+}
+
+void ofApp::mousePressed(int x, int y, int button) {
+    pattern.updateNumber(ofRandom(1, 5));
 }
 
 //--------------------------------------------------------------
@@ -124,7 +139,7 @@ void ofApp::setSettings(int num) {
         }
     }
     
-    pattern.setup(currentPattern, angle, speed, offset, density, numOfShapes);
+    pattern.setup(currentPattern);
 }
 
 
