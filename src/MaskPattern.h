@@ -1,31 +1,31 @@
 //
-//  Pattern.h
-//  patternGen
+//  MaskPattern.h
+//  ofPatternGenerator
 //
 //  Created by Jesse Scott on 2014-08-14.
 //
 //
 
-#ifndef __patternGen__BasePattern__
-#define __patternGen__BasePattern__
+#ifndef __patternGen__MaskPattern__
+#define __patternGen__MaskPattern__
 
 #include "ofMain.h"
 
-class BasePattern {
+class MaskPattern {
     public:
 
-        BasePattern() {
+        MaskPattern() {
             x = 0;
             y = 0;
             w = 704;
             h = 704;
         }
     
-        ~BasePattern(){
+        ~MaskPattern(){
             
         }
         
-        void setup(int num);
+        void setup(int _num, int _angle, int _speed, int _offset, int _density, int _numOfShapes);
         void update(int num);
     
         void circleStroke(int x, int y, int rad, int stroke);

@@ -13,14 +13,23 @@ void ofApp::setup(){
     drawingFbo.end();
 
     currentPattern = 0;
-    pattern.setup(currentPattern);
+    angle = 0;
+    speed = 0;
+    offset = 0;
+    density = 100;
+    numOfShapes = 7;
+    pattern.setup(currentPattern, angle, speed, offset, density, numOfShapes);
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     drawingFbo.begin();
-        pattern.update(currentPattern);
+        ofClear(255,255,255, 0);
+        ofBackground(0,0,0);
+        ofPushMatrix(); ofPushStyle();
+            pattern.update(currentPattern);
+        ofPopMatrix(); ofPopStyle();
     drawingFbo.end();
 }
 
@@ -33,46 +42,89 @@ void ofApp::draw(){
 void ofApp::keyPressed(int key){
     if (key > 48 && key < 57) {
         currentPattern = key - 48;
+        setSettings(currentPattern);
     }
-    pattern.setup(currentPattern);
 }
 
 //--------------------------------------------------------------
-void ofApp::keyReleased(int key){
 
+void ofApp::setSettings(int num) {
+    switch (num) {
+        case 1: // CIRCLES
+        {
+            angle = 0;
+            speed = 0;
+            offset = 0;
+            density = 100;
+            numOfShapes = 7;
+            break;
+        }
+        case 2: // SQUARES
+        {
+            angle = 0;
+            speed = 0;
+            offset = 0;
+            density = 100;
+            numOfShapes = 8;
+            break;
+        }
+        case 3: // TRIANGLES
+        {
+            angle = 0;
+            speed = 0;
+            offset = 0;
+            density = 100;
+            numOfShapes = 8;
+            break;
+        }
+        case 4: // DOTS
+        {
+            angle = 0;
+            speed = 0;
+            offset = 0;
+            density = 100;
+            numOfShapes = 7;
+            break;
+        }
+        case 5: // LINES
+        {
+            angle = 0;
+            speed = 0;
+            offset = 0;
+            density = 100;
+            numOfShapes = 4;
+            break;
+        }
+        case 6: // RECTANGLES
+        {
+            angle = 0;
+            speed = 0;
+            offset = 0;
+            density = 100;
+            numOfShapes = 7;
+            break;
+        }
+        case 7:
+        {
+            angle = 0;
+            speed = 0;
+            offset = 0;
+            density = 100;
+            numOfShapes = 7;
+            break;
+        }
+        case 8:
+        {
+            angle = 0;
+            speed = 0;
+            offset = 0;
+            density = 100;
+            numOfShapes = 7;
+            break;
+        }
+    }
+    
+    pattern.setup(currentPattern, angle, speed, offset, density, numOfShapes);
 }
 
-//--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y ){
 
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseDragged(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::windowResized(int w, int h){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::gotMessage(ofMessage msg){
-
-}
-
-//--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
-
-}
