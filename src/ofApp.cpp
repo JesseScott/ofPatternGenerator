@@ -4,25 +4,29 @@
 void ofApp::setup(){
     
     ofEnableSmoothing();
+    ofSetFrameRate(30);
+    
+    drawingFbo.allocate(704, 704, GL_RGBA);
+    drawingFbo.begin();
+        ofClear(255,255,255, 0);
+        ofEnableSmoothing();
+    drawingFbo.end();
 
     currentPattern = 0;
-    
     pattern.setup(currentPattern);
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    
-    pattern.update(currentPattern);
-    
+    drawingFbo.begin();
+        pattern.update(currentPattern);
+    drawingFbo.end();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    
-    pattern.draw();
-    
+    drawingFbo.draw(0, 0, ofGetWidth(), ofGetHeight());
 }
 
 
@@ -30,11 +34,9 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    cout << "key is " << key << endl;
     if (key > 48 && key < 57) {
         currentPattern = key - 48;
     }
-    cout << "pattern is " << currentPattern << endl;
     pattern.setup(currentPattern);
 }
 

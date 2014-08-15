@@ -23,5 +23,6 @@ class ofApp : public ofBaseApp{
     
         int currentPattern;
         BasePattern pattern;
+        ofFbo drawingFbo;
 		
 };
