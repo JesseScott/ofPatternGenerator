@@ -2,7 +2,6 @@
 
 #include "ofMain.h"
 #include "BasePattern.h"
-#include "PatternOne.h"
 
 class ofApp : public ofBaseApp{
 

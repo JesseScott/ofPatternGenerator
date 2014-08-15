@@ -29,9 +29,6 @@ void ofApp::draw(){
     drawingFbo.draw(0, 0, ofGetWidth(), ofGetHeight());
 }
 
-
-
-
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     if (key > 48 && key < 57) {
