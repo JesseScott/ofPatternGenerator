@@ -1,0 +1,4 @@
+ofPatternGenerator
+==================
+
+for another project
