@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>98D46CF5-AE87-47E5-82A7-824A080D8C25</string>
+	<string>57DFD025-37E4-4569-A398-2D93E99164AF</string>
 	<key>IDESourceControlProjectName</key>
 	<string>ofPatternGenerator</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>242247BA-A691-41FB-A7C6-C7978F9982D2</key>
-		<string>https://github.com/JesseScott/ofPatternGenerator.git</string>
+		<key>14C597B0-4892-42AB-9C2B-F948D6F3DAE6</key>
+		<string>https://github.com/schwarrrtz/ofPatternGenerator.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>ofPatternGenerator.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>242247BA-A691-41FB-A7C6-C7978F9982D2</key>
+		<key>14C597B0-4892-42AB-9C2B-F948D6F3DAE6</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/JesseScott/ofPatternGenerator.git</string>
+	<string>https://github.com/schwarrrtz/ofPatternGenerator.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>242247BA-A691-41FB-A7C6-C7978F9982D2</string>
+	<string>14C597B0-4892-42AB-9C2B-F948D6F3DAE6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>242247BA-A691-41FB-A7C6-C7978F9982D2</string>
+			<string>14C597B0-4892-42AB-9C2B-F948D6F3DAE6</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ofPatternGenerator</string>
 		</dict>

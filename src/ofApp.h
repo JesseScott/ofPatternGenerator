@@ -3,8 +3,8 @@
 #include "ofMain.h"
 #include "MaskPattern.h"
 
-class ofApp : public ofBaseApp{
-
+class ofApp : public ofBaseApp
+{
 	public:
 		void setup();
 		void update();
@@ -24,5 +24,4 @@ class ofApp : public ofBaseApp{
         int density;
         int numOfShapes;
         int lineWidth;
-		
 };

@@ -1,8 +1,7 @@
 #include "ofApp.h"
 
-//--------------------------------------------------------------
-void ofApp::setup(){
-    
+void ofApp::setup()
+{    
     ofEnableSmoothing();
     ofSetFrameRate(30);
     ofSetVerticalSync(true);
@@ -25,8 +24,8 @@ void ofApp::setup(){
     //pattern.updateWidth(lineWidth);
 }
 
-//--------------------------------------------------------------
-void ofApp::update(){
+void ofApp::update()
+{
     drawingFbo.begin();
         ofClear(255,255,255, 0);
         ofBackground(0,0,0);
@@ -37,34 +36,41 @@ void ofApp::update(){
     drawingFbo.end();
 }
 
-//--------------------------------------------------------------
-void ofApp::draw(){
+void ofApp::draw()
+{
     drawingFbo.draw(0, 0, ofGetWidth(), ofGetHeight());
 }
 
-//--------------------------------------------------------------
-void ofApp::keyPressed(int key){
-    if (key > 48 && key < 57) {
+void ofApp::keyPressed(int key)
+{
+    if (key > 48 && key < 57)
+    {
         currentPattern = key - 48;
         setSettings(currentPattern);
     }
-//    lineWidth = ofClamp(lineWidth, 5, 45);
-//    if(key == 357) { // UP
-//        pattern.updateWidth(lineWidth += 5);
-//    }
-//    if(key == 359) { // DOWN
-//        pattern.updateWidth(lineWidth -= 5);
-//    }
+    //lineWidth = ofClamp(lineWidth, 5, 45);
+    // UP
+    //if(key == 357)
+    //{
+    //  pattern.updateWidth(lineWidth += 5);
+    //}
+    // DOWN
+    //if(key == 359)
+    //{
+    //   pattern.updateWidth(lineWidth -= 5);
+    //}
 }
 
-void ofApp::mousePressed(int x, int y, int button) {
+void ofApp::mousePressed(int x, int y, int button)
+{
     //pattern.updateNumber(ofRandom(1, 5));
 }
 
-//--------------------------------------------------------------
 
-void ofApp::setSettings(int num) {
-    switch (num) {
+void ofApp::setSettings(int num)
+{
+    switch (num)
+    {
         case 1: // CIRCLES
         {
             offset = 0;
@@ -125,5 +131,3 @@ void ofApp::setSettings(int num) {
     
     pattern.setup(currentPattern);
 }
-
-

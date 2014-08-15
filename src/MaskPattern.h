@@ -11,10 +11,11 @@
 
 #include "ofMain.h"
 
-class MaskPattern {
+class MaskPattern
+{
     public:
-
-        MaskPattern() {
+        MaskPattern()
+        {
             x = 0;
             y = 0;
             w = 704;
@@ -27,7 +28,8 @@ class MaskPattern {
             lineWidth = 5;
         }
     
-        ~MaskPattern(){
+        ~MaskPattern()
+        {
             
         }
         
