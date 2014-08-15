@@ -19,6 +19,12 @@ class MaskPattern {
             y = 0;
             w = 704;
             h = 704;
+            angle = 0;
+            speed = 0;
+            offset = 0;
+            density = 100;
+            numOfShapes = 7;
+            lineWidth = 5;
         }
     
         ~MaskPattern(){
@@ -38,11 +44,11 @@ class MaskPattern {
         int x, y, w, h;
     
         float radius;
+        int offset;
+        int density;
     
         int angle;
         int speed;
-        int offset;
-        int density;
         int lineWidth;
         int numOfShapes;
     

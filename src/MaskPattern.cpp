@@ -11,52 +11,52 @@
 
 void MaskPattern::setup(int num) {
     switch(num) {
-            case 0:
+        case 0:
 
-            break;
-            
-            case 1:
-                ofNoFill();
-                ofSetCircleResolution(48);
-
-            break;
-            
-            case 2:
-                ofNoFill();
-
-            break;
+        break;
+        
+        case 1:
+            ofNoFill();
+            ofSetCircleResolution(48);
+ofSetLineWidth(5);
+        break;
+        
+        case 2:
+            ofNoFill();
+ofSetLineWidth(5);
+        break;
             
         case 3:
             ofNoFill();
-
+ofSetLineWidth(5);
         break;
 
         case 4:
             ofFill();
-
+ofSetLineWidth(5);
         break;
             
         case 5:
             ofFill();
-
+ofSetLineWidth(5);
         break;
             
         case 6:
             ofNoFill();
-
+ofSetLineWidth(5);
         break;
 
         case 7:
             ofNoFill();
             radius = 0.0;
-
+ofSetLineWidth(5);
         break;
     }
 }
 
 void MaskPattern::update(int num) {
     // Global Settings
-    ofSetLineWidth(lineWidth);
+    //ofSetLineWidth(lineWidth);
     
     
     
@@ -192,18 +192,18 @@ void MaskPattern::update(int num) {
  */
 
 void MaskPattern::updateWidth(int _lineWidth) {
-    lineWidth = _lineWidth;
+    //lineWidth = _lineWidth;
 }
 
 void MaskPattern::updateNumber(int _numShapes) {
-    numOfShapes = _numShapes;
+    //numOfShapes = _numShapes;
 }
 
 void MaskPattern::updateAngle(int _angle) {
-    angle = _angle;
+    //angle = _angle;
 }
 void MaskPattern::updateSpeed(int _speed) {
-    speed = _speed;
+    //speed = _speed;
 }
 
 

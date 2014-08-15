@@ -22,7 +22,7 @@ void ofApp::setup(){
     lineWidth = 5;
     
     pattern.setup(currentPattern);
-    pattern.updateWidth(lineWidth);
+    //pattern.updateWidth(lineWidth);
 }
 
 //--------------------------------------------------------------
@@ -48,17 +48,17 @@ void ofApp::keyPressed(int key){
         currentPattern = key - 48;
         setSettings(currentPattern);
     }
-    lineWidth = ofClamp(lineWidth, 5, 45);
-    if(key == 357) { // UP
-        pattern.updateWidth(lineWidth += 5);
-    }
-    if(key == 359) { // DOWN
-        pattern.updateWidth(lineWidth -= 5);
-    }
+//    lineWidth = ofClamp(lineWidth, 5, 45);
+//    if(key == 357) { // UP
+//        pattern.updateWidth(lineWidth += 5);
+//    }
+//    if(key == 359) { // DOWN
+//        pattern.updateWidth(lineWidth -= 5);
+//    }
 }
 
 void ofApp::mousePressed(int x, int y, int button) {
-    pattern.updateNumber(ofRandom(1, 5));
+    //pattern.updateNumber(ofRandom(1, 5));
 }
 
 //--------------------------------------------------------------
@@ -67,8 +67,6 @@ void ofApp::setSettings(int num) {
     switch (num) {
         case 1: // CIRCLES
         {
-            angle = 0;
-            speed = 0;
             offset = 0;
             density = 100;
             numOfShapes = 7;
@@ -76,8 +74,6 @@ void ofApp::setSettings(int num) {
         }
         case 2: // SQUARES
         {
-            angle = 0;
-            speed = 0;
             offset = 0;
             density = 100;
             numOfShapes = 8;
@@ -85,8 +81,6 @@ void ofApp::setSettings(int num) {
         }
         case 3: // TRIANGLES
         {
-            angle = 0;
-            speed = 0;
             offset = 0;
             density = 100;
             numOfShapes = 8;
@@ -94,8 +88,6 @@ void ofApp::setSettings(int num) {
         }
         case 4: // DOTS
         {
-            angle = 0;
-            speed = 0;
             offset = 0;
             density = 100;
             numOfShapes = 7;
@@ -103,8 +95,6 @@ void ofApp::setSettings(int num) {
         }
         case 5: // LINES
         {
-            angle = 0;
-            speed = 0;
             offset = 0;
             density = 100;
             numOfShapes = 4;
@@ -112,8 +102,6 @@ void ofApp::setSettings(int num) {
         }
         case 6: // RECTANGLES
         {
-            angle = 0;
-            speed = 0;
             offset = 0;
             density = 100;
             numOfShapes = 7;
@@ -121,8 +109,6 @@ void ofApp::setSettings(int num) {
         }
         case 7:
         {
-            angle = 0;
-            speed = 0;
             offset = 0;
             density = 100;
             numOfShapes = 7;
@@ -130,8 +116,6 @@ void ofApp::setSettings(int num) {
         }
         case 8:
         {
-            angle = 0;
-            speed = 0;
             offset = 0;
             density = 100;
             numOfShapes = 7;
